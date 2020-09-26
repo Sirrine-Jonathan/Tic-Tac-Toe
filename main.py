@@ -86,6 +86,7 @@ def reset():
             cell['bg'] = "#fff"
             cell['font'] = fontNormal
             cell['state'] = tk.NORMAL
+    config['x_turn'] = True
     display['text'] = "X's Turn"
 
 def disableAll():
@@ -151,8 +152,8 @@ if (not(config['x_turn'])):
     starting_display_text = "O's Turn"
 display = tk.Label(master=controls, font=fontControl, height=1, text=starting_display_text)
 display.grid(row=0, column=0, sticky="nsew")
-resetBtn = tk.Button(master=controls, width=5, height=1,text="Reset", bg="#ff4444", fg="#fff", font=fontControl, command=reset)
-resetBtn.grid(row=0, column=1, sticky="nsew")
+resetBtn = tk.Button(master=controls, width=5, height=1,text="Reset", bg="#ff4444", activebackground="#ff4444", fg="#fff", activeforeground="#fff", font=fontControl, command=reset, relief="groove")
+resetBtn.grid(row=0, column=1, sticky="nsew", padx=5, pady=5)
 
 controls.pack(side="top", fill="x")
 game.pack(side="bottom", fill="x")
